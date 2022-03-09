@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Text;
+use App\Category;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
@@ -19,7 +21,9 @@ class LinkController extends Controller
         return view('web.contact');
     }
     public function isocrates(){
-        return view('web.isocrates');
+        $categories=Category::all();
+        $texts=Text::all();
+        return view('web.isocrates', compact('categories', 'texts'));
     }
     public function philebus(){
         return view('web.philebus');

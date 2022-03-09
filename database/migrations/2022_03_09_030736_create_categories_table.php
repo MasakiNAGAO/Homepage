@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('headline');
             $table->text("caption")->nullable();
+            $table->string('major_category_name');
             $table->integer('major_category_id')->unsigned();
         });
     }

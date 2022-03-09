@@ -22,44 +22,29 @@
     </div>
     <div>
         <h2 class="headline" id="translation">翻訳</h2>
-        @foreach($texts as $text)
-            @if($text->category == 'isocrates')
-                @if($text->headline == '無名氏「イソクラテス伝」')
-                    <h4>{{$text->headline}}　[<a href="#top">Top</a>]</h4>
-                    @if($text->caption != null)
-                        <p class="caption">{{$text->caption}}</p>
-                    @endif
-                    @foreach($text as $paragraph)
-                        <div class="translationSet">
-                            <div class="japTranslation">
-                                {{$text->japTranslation}}
-                            </div>
-                            <div class="greekText">
-                                {{$text->greekText}}
-                            </div>
-                        </div>
-                        <br>
-                    @endforeach
+        @foreach($categories as $category)
+            @if($category->major_category_name == 'isocrates')
+            <section id="{{$category->name}}">
+            <h4>{{$category->headline}}　[<a href="#top" class="link">Top</a>]</h4>
+                @if($category->caption != null)
+                <p class="caption"><?=sprintf($category->caption)?></p>
                 @endif
+                @foreach($texts as $text)
+                    @if($text->category_id == $category->id)
+                    <div class="translationSet">
+                        <div class="japTranslation">
+                            <?=sprintf($text->japaneseTranslation)?>
+                        </div>
+                        <div class="greekText">
+                            <?=sprintf($text->greekText)?>
+                        </div>
+                    </div>
+                    <br>
+                    @endif
+                @endforeach
+            </section>
             @endif
         @endforeach
-        <section id="">
-                <h4>: 　[<a href="#top">Top</a>]</h4>
-                <div class="translationSet">
-                    <div class="japTranslation">
-                    </div>
-                    <div class="greekText">
-                    </div>
-                </div>
-                <br>
-                <div class="translationSet">
-                    <div class="japTranslation">
-                    </div>
-                    <div class="greekText">
-                    </div>
-                </div>
-                <br>
-        </section>
     </div>
     <div>
         <h2 class="headline" id="biblio">基本文献</h2>
