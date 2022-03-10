@@ -23,7 +23,6 @@
     <div>
         <h2 class="headline" id="translation">翻訳</h2>
         @foreach($categories as $category)
-            @if($category->major_category_name == 'isocrates')
             <section id="{{$category->name}}">
             <h4>{{$category->headline}}　[<a href="#top" class="link">Top</a>]</h4>
                 @if($category->caption != null)
@@ -43,7 +42,6 @@
                     @endif
                 @endforeach
             </section>
-            @endif
         @endforeach
     </div>
     <div>

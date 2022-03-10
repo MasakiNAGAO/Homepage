@@ -130,7 +130,7 @@ class TextController extends Controller
       public function import_csv(Request $request)
       {
           if ($request->hasFile('csv')) {
-              Excel::import(new TextsImport, $request->file('csv'));
+              Excel::import(new TextsImport, $request()->file('csv'));
               return redirect()->route('dashboard.texts.import_csv')->with('flash_message', 'CSVでの一括登録が成功しました');
           }
           return redirect()->route('dashboard.texts.import_csv')->with('flash_message', 'CSVが追加されていません。CSVを追加してください');

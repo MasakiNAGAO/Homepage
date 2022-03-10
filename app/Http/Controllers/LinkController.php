@@ -12,6 +12,8 @@ class LinkController extends Controller
         return view('web.profile');
     }
     public function minor_socratics(){
+        $categories=Category::where('major_category_name', 'minor_socratics')->get();
+        $texts=Text::all();
         return view('web.minor_socratics');
     }
     public function on_pleasure(){
@@ -21,17 +23,23 @@ class LinkController extends Controller
         return view('web.contact');
     }
     public function isocrates(){
-        $categories=Category::all();
+        $categories=Category::where('major_category_name', 'isocrates')->get();
         $texts=Text::all();
         return view('web.isocrates', compact('categories', 'texts'));
     }
     public function philebus(){
+        $categories=Category::where('major_category_name', 'philebus')->get();
+        $texts=Text::all();
         return view('web.philebus');
     }
     public function aristotle(){
+        $categories=Category::where('major_category_name', 'aristotle')->get();
+        $texts=Text::all();
         return view('web.aristotle');
     }
     public function en(){
+        $categories=Category::where('major_category_name', 'en')->get();
+        $texts=Text::all();
         return view('web.en');
     }
 }
