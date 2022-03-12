@@ -82,28 +82,17 @@
             </li>
         </ul>
     </div>
-    
     @foreach($categories as $category)
-        <section id="{{$category->name}}">
-        <h2 class="headline">{{$category->headline}}</h2>
-        <h4>{{$category->caption}}　[<a href="#top" class="link">Top</a>]</h4>
-            @foreach($texts as $text)
-                @if($text->category_id == $category->id)
-                <div class="translationSet">
-                    <div class="japTranslation">
-                        <?=sprintf($text->japaneseTranslation)?>
-                    </div>
-                    <div class="greekText">
-                        <?=sprintf($text->greekText)?>
-                    </div>
-                </div>
-                <br>
-                @endif
-            @endforeach
-        </section>
+    <section id="{{$category->name}}">
+    <h2 class="headline">{{$category->headline}}</h2>
+    @foreach($texts as $text)
+    @if($text->category_id == $category->id)
+    <?=html_entity_decode($text->miscellany);?>
+    @endif
     @endforeach
-
     <br>
+    </section>
+    @endforeach
 </section>
 <script>
     const rhetJap = document.getElementsByClassName("rhetJap");

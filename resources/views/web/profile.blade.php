@@ -31,7 +31,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;<a class="link"
                     href="https://philosophy-japan.org/wpdata/wp-content/uploads/2021/08/4a307746b7d91e2df853275b86965645.pdf">要旨リンク（外部サイト）</a>
             </li>
-            <li>2022年3月「悲観する快楽主義――キュレネ派のヘゲシアス訳註」『倫理学紀要』29, pp._-_.</li>
+            <li>2022年3月「悲観する快楽主義――キュレネ派のヘゲシアス訳註」『倫理学紀要』29, pp.1-33.</li>
         </ul>
     </div>
     <br>

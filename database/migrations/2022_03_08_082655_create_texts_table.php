@@ -18,6 +18,7 @@ class CreateTextsTable extends Migration
             $table->timestamps();
             $table->text('greekText');
             $table->text('japaneseTranslation');
+            $table->longText('miscellany')->nullable();
             $table->integer('category_id')->unsigned();
         });
     }

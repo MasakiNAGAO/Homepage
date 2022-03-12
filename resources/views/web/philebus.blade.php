@@ -24,22 +24,12 @@
     @foreach($categories as $category)
         <section id="{{$category->name}}">
         <h4>{{$category->headline}}　[<a href="#top" class="link">Top</a>]</h4>
-            @if($category->caption != null)
-            <p class="caption"><?=sprintf($category->caption)?></p>
+        @foreach($texts as $text)
+            @if($text->category_id == $category->id)
+            <?=html_entity_decode($text->miscellany);?>
             @endif
-            @foreach($texts as $text)
-                @if($text->category_id == $category->id)
-                <div class="translationSet">
-                    <div class="japTranslation">
-                        <?=sprintf($text->japaneseTranslation)?>
-                    </div>
-                    <div class="greekText">
-                        <?=sprintf($text->greekText)?>
-                    </div>
-                </div>
-                <br>
-                @endif
-            @endforeach
+        @endforeach
+        <br>
         </section>
     @endforeach
     
